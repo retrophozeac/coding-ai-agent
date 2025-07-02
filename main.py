@@ -47,7 +47,7 @@ def main():
     messages = [
         types.Content(role="user", parts=[types.Part(text=user_prompt)]),
     ]
-    api_key = "AIzaSyDYk-DOT77p9aSrUFvfuueLbbpLHKdQASc"
+    api_key = os.getenv("GEMENI_API_KEY")
     client = genai.Client(api_key=api_key)
     for x in range(20):
         response = client.models.generate_content(
